@@ -5,20 +5,20 @@
 void println_file_type(__mode_t mode) {
   char *ptr;
   if (S_ISREG(mode))
-    ptr = "普通文件";
+    ptr = "regular file";
   else if (S_ISDIR(mode))
-    ptr = "目录文件";
+    ptr = "directory";
   else if (S_ISCHR(mode))
-    ptr = "字符特殊文件";
+    ptr = "character special file";
   else if (S_ISBLK(mode))
-    ptr = "块特殊文件";
+    ptr = "block special file";
   else if (S_ISFIFO(mode))
-    ptr = "管道文件";
+    ptr = "pipe";
   else if (S_ISLNK(mode))
-    ptr = "符号链接";
+    ptr = "symbolic link";
   else
-    ptr = "未知类型";
-  PRINTLN("文件类型: %s", ptr);
+    ptr = "unknown";
+  PRINTLN("file type: %s", ptr);
 }
 
 void print_time(struct timespec time, char *form) {
